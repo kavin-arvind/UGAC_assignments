@@ -1,0 +1,154 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      #navigation{
+            position: fixed;
+            top: 0px;
+            overflow: hidden;
+            width: 100%;
+            z-index: 9999;
+        }
+      #content{
+        padding-top: 60px;
+      }
+    </style>
+    <title>Blog</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+  </head>
+
+  <body>
+
+      <header>
+        <nav id="navigation" class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <img src="../images/ugac_logo.png" alt="UGAC Canteen" style="padding-left: 10px;height: 60px;">         
+          <div class="nav-scroller py-1 mb-2">
+              <nav class="nav d-flex justify-content-end">
+                <a class="p-2 text-muted" href="#about">About us</a>
+                <a class="p-2 text-muted" href="#events">Events</a>
+                <a class="p-2 text-muted" href="#contact">Contact</a>
+              </nav>
+            </div>
+      </nav>
+      </header>
+
+      
+
+      <div id="content">
+        <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+          <div class="col-md-6 px-0">
+            <h1 class="display-4 font-italic">New Events</h1>
+            <p class="lead my-3">Learner's space</p>
+            <p class="lead mb-0"><a href="#learners_space" class="text-white font-weight-bold">Learn more</a></p>
+          </div>
+        </div>
+
+        <section id="about">
+          <div class="container border rounded" style="background-color: aqua;padding: 10px;">
+              <h2>About us</h2>
+              <div class="row">
+                  <div class="col col-lg-4">
+                      <img src="../images/ugac_logo.png" alt="Logo" class="img-fluid rounded">
+                  </div>
+                  <div class="col md-auto">
+                    UGAC or the Undergraduate Academic Council of IIT Bombay, is a student body dedicated to improve the academic system and culture of the institute by working on various policies and conducting sessions to disseminate information.
+                    <br>
+                    It comprises of various divisions and clubs which cater to the specific needs of the undergraduate student community and work their best to ease out each student's academic journey and pave path to a brighter future.                  </div>
+              </div>
+          </div>
+      </section>
+
+      <section id="events">
+        <div class="container">
+              <h2>Events</h2>
+            <div class="row mb-2">
+              <div class="col-md-6">
+                <div id="learners_space" class="card flex-md-row mb-4 box-shadow h-md-250">
+                  <div class="card-body d-flex flex-column align-items-start">
+                    <h3 class="mb-0">
+                      <a class="text-dark">Learner's space</a>
+                    </h3>
+                    <p class="card-text mb-auto">Learners Space is an online platform with a set of diverse courses for you to start exploring various topics. We bring to you a plethora of courses, all made with utmost attention to help serve you the best!</p>
+                    <a href="https://ugac.gymkhana.iitb.ac.in/~LearnerSpace2023/index.php">Click to visit Learners space</a>
+                  </div>
+                  <img class="card-img-right" src="../images/learners_space.jpeg" alt="Card image cap">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div id="course_info" class="card flex-md-row mb-4 box-shadow h-md-250">
+                  <div class="card-body d-flex flex-column align-items-start">
+                    <h3 class="mb-0">
+                      <a class="text-dark">SSS cource info session</a>
+                    </h3>
+                    <div class="mb-1 text-muted">Jun 30</div>
+                    <p class="card-text mb-auto">Expalains the cources avilable in 2nd, 3rd and 4th year and about various minors and honors avilable for UG students in IITB.</p>
+                    <a href="https://youtu.be/GPee1ILV2ps">Vedio link</a>
+                    <a href="https://youtube.com/@ugaciitb858">Visit youtube channel</a>
+                  </div>
+                  <img class="card-img-right rounded" src="../images/cource_info.jpeg" alt="Card image cap">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </section>
+
+      <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <p>IITB, Mumbai, India</p>
+                    <p>Phone: +1 123-456-7890</p>
+                    <p>Follow us:</p>
+                    <a href="#" class="btn btn-primary"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="btn btn-primary"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn btn-primary"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  
+    <footer class="blog-footer">
+      Created by <strong>Kavin Arvind</strong>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+      document.getElementById("form").addEventListener('submit',function(event){submit();})
+      function submit() {
+            event.preventDefault(); 
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            var a="Thank you "+ name+ " (email: "+email+ ") for your message!";
+            alert(a);
+        }
+
+    </script>
+  </body>
+</html>
