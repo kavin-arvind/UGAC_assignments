@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+    
+{% block content %}
+    {% if user.is_authenticated %}
+        <form method="post" enctype="multipart/form-data" action="/additem">
+            <input type="hidden" name="user_id" value="{{ request.user.id }}">
+            <div class="form-group">
+              <label for="item_name">Item Name:</label>
+              <input type="text" id="item_name" name="item_name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="item_photo">Item Photo:</label>
+              <input type="file" id="item_photo" name="item_photo" accept="image/*" class="form-control-file" required>
+            </div>
+            <div class="form-group">
+              <label for="item_desc">Item Description:</label>
+              <textarea type="text" id="item_desc" name="item_desc" class="form-control" maxlength="5000"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="starting_bid">Starting Bid Price:</label>
+              <div class="input-group">
+                <span class="input-group-text">$</span>
+                <input type="number" id="starting_bid" name="starting_bid" class="form-control" step="0.01" min="0.01" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Item for Auction</button>
+          </form>
+    {% else %}
+        <h1>Unauthorised access</h1>
+    {% endif %}
+{% endblock %}
