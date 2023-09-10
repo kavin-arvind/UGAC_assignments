@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .card{
+            cursor: pointer;
+        }
+    </style>
+    <title>UGAC Canteen</title>
+</head>
+<body>
+    <header>
+        <!-- Navigation menu using Bootstrap -->
+        
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img src="../images/ugac_logo.png" alt="UGAC Canteen" style="padding-left: 10px;height: 60px;">
+        
+            
+            
+            <div class="nav-scroller py-1 mb-2">
+                <nav class="nav d-flex justify-content-end">
+                  <a class="p-2 text-muted" href="#home">Home</a>
+                  <a class="p-2 text-muted" href="#menu">Menu</a>
+                  <a class="p-2 text-muted" href="#history">History</a>
+                  <a class="p-2 text-muted" href="#contact">Contact</a>
+                </nav>
+              </div>
+        </nav>
+
+    </header>
+
+    <main>
+        <section id="home">
+            <div class="jumbotron" style="background-image: url(../images/restaurant_cartoon.jpg);background-size: 100% 100%;">
+                <h1 class="display-3" style="font-weight: bold;background-color: wheat;">Welcome to UGAC canteen</h1>
+                <p class="lead" style="font-weight: bold;">cheap and best</p>
+                <hr class="my-4">
+            </div>
+        </section>
+
+        <section id="menu">
+            <div class="container">
+                <h2>Our Menu</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="./menu/tacos.html">
+                            <div class="card">
+                                <img src="../images/taco.jpg" class="img-thumbnail" alt="tacos" style="height: 100%;width: 100%;">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="./menu/burgers.html">
+                            <div class="card">
+                                <img src="../images/burger.jpg" class="img-thumbnail" alt="burgers" style="height: 100%;width: 100%;">
+                            </div>
+                        </a>
+                    </div>
+                    <a href="./menu/pizzas.html">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img src="../images/pizza.jpg" class="img-thumbnail" alt="pizzas" style="height: 100%;width: 100%;">
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                
+                
+                <!-- <div class="row">
+                    <div class="col-md-4">
+                        <div class="card" class="collapse" id="taco">
+                            <img src="../images/taco_menu.jpg" alt="taco menu">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" class="collapse" id="burger">
+                            <img src="../images/burger_menu.jpg" alt="burger menu">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card" class="collapse" id="pizza">
+                            <img src="../images/pizza_menu.jpg" alt="pizza menu">
+                        </div>
+                    </div>
+                </div> -->
+                
+
+            </div>
+            
+        </section>
+
+        <section id="history">
+            <div class="container">
+                <h2>History</h2>
+                <p>Started in ................$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+                    $$$$$$$$$$</p>
+                <p></p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <p>123 Main Street, City, Country</p>
+                        <p>Phone: +1 123-456-7890</p>
+                        <p>Follow us:</p>
+                        <a href="#" class="btn btn-primary"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="btn btn-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-primary"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- <section id="reservation">
+            <div class="container">
+                <h2>Make a Reservation</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="date">Date</label>
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="time">Time</label>
+                            <input type="time" class="form-control" id="time">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="party-size">Party Size</label>
+                        <select class="form-control" id="party-size">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5+</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" data-toggle="modal" data-target="#submit">Submit</button>
+                    <div class="modal fade" id="submit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Details submitting</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              ...
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                              <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Fictional Restaurant. All rights reserved.</p>
+        </div>
+    </footer> -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>

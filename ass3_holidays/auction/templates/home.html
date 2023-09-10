@@ -1,0 +1,177 @@
+{% extends 'main.html' %}
+    
+{% block content %}
+    <h1 style="text-align: center;">Welcome to the home page of Auction Portal</h1>
+    {% if user.is_authenticated %}
+        <h1>Hi you're logged in</h1>
+        <div class="text-center text-lg-start mt-4 pt-2">
+            <a href="/additem"><button type="button" class="btn btn-primary btn-lg"
+            style="padding-left: 2.5rem; padding-right: 2.5rem;">Add item for auction</button></a>
+        </div>
+        <h2>Available Items for Bidding</h2>
+        <div class="table-responsive-sm">
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Highest bid</th>
+                    <th>Image</th>
+                    <th>Bid</th>
+                    <th>Owner's email</th>
+                    <th>More Info</th>
+                </tr>
+                {% for item in available_items %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.starting_bid }}</td>
+                    <td><img src="{{ item.photo.url }}" alt="{{ item.name }}" style="height: 4rem; width: 4rem;"></td>
+                    <td>
+                        <form action="/" method="post">
+                            <input type="number" id="bid" name="bid" class="form-control" step="0.01" min="{{ item.starting_bid }}">
+                            <input type="text" name="user_id" value="{{ user.id }}" hidden>
+                            <input type="text" name="item_id" value="{{ item.id }}" hidden>
+                            <input type="text" name="for" value="place_bid" hidden>
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_{{ item.id }}">Place Bid</button>
+                            <div class="modal fade container-fluid" id="modal_{{ item.id }}" tabindex="-1" role="dialog" aria-labelledby="modal_{{ item.id }}" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Place Bid</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Are you sure to place a Bid?
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                    <button type="submit" class="btn btn-danger">Place Bid</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+
+                        </form>
+                    </td>
+                    <td>{{ item.user.email }}</td>
+                    <td>
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal_more_{{ item.id }}">More info</button>
+                        <div class="modal fade container-fluid" id="modal_more_{{ item.id }}" tabindex="-1" role="dialog" aria-labelledby="modal_more_{{ item.id }}" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">{{ item.name }}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                </div>
+                                <div class="modal-body">
+                                    <strong>Owner:</strong>{{ item.user.fname }} {{ item.user.lname }} <br>
+                                    <strong>Email:</strong>{{ item.user.email }} <br>
+                                    <strong>Item name:</strong>{{ item.name }} <br>
+                                    <strong>Starting Bid:</strong>{{ item.starting_bid }} <br>
+                                    <img src="{{ item.photo.url }}" alt="{{ item.name }}" style="height: 4rem; width: 4rem;"> <br>
+                                    <strong>Description:</strong>{{ item.description }}
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+
+                    </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <h2>Your Items Listed for Auction</h2>
+        <div class="table-responsive-sm">
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Highest bid</th>
+                    <th>Image</th>
+                    <th>End Auction</th>
+                    <th>Highest bidder email</th>
+                </tr>
+                {% for item in user_items_for_bidding %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.starting_bid }}</td>
+                    <td><img src="{{ item.photo.url }}" alt="{{ item.name }}" style="height: 4rem; width: 4rem;"></td>
+                    <td>
+                        <form action="/" method="post">
+                            <input type="text" name="user_id" value="{{ user.id }}" hidden>
+                            <input type="text" name="item_id" value="{{ item.id }}" hidden>
+                            <input type="text" name="for" value="end_auction" hidden>
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal_{{ item.id }}">End Auction</button>
+                                <div class="modal fade container-fluid" id="modal_{{ item.id }}" tabindex="-1" role="dialog" aria-labelledby="modal_{{ item.id }}" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">End Auction</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            If ended, corresponding winner will be anounced and auction ends.
+                                        </div>
+                                        <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-danger">End Auction</button>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+    
+                        </form>
+                    </td>
+                    {% if item.winner.email %}
+                    <td>{{ item.winner.email }}</td>
+                    {% else %}
+                    <td>No one has bidded</td>
+                    {% endif %}
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+
+        <h2>Your Submitted items</h2>
+        <div class="table-responsive-sm">
+            <table class="table">
+                <tr>
+                    <th>Name</th>
+                    <th>Final bid value</th>
+                    <th>Image</th>
+                    <th>End Auction</th>
+                    <th>Winner Email</th>
+                </tr>
+                {% for item in user_items_submitted %}
+                <tr>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.starting_bid }}</td>
+                    <td><img src="{{ item.photo.url }}" alt="{{ item.name }}" style="height: 4rem; width: 4rem;"></td>
+                    <td>
+                        {% if item.is_bidding_open %}
+                        <form action="/" method="post">
+                            <input type="number" id="bid" name="bid" class="form-control" step="0.01" min="0.01" min="{{ item.starting_bid }}">
+                            <input type="text" name="user_id" value="{{ user.id }}" hidden>
+                            <input type="text" name="item_id" value="{{ item.id }}" hidden>
+                            <button type="submit">Place Bid</button>
+                        </form>
+                        {% else %}
+                        Auction ended
+                        {% endif %}
+                    </td>
+                    <td>{{ item.winner.email }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <!-- <a href="/send_email">send email</a> -->
+    {% else %}
+        <h2>Please <a href="/login">Log-In</a> to participate</h2>
+    {% endif %}
+{% endblock %}

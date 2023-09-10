@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        .card-img-top{    
+            background-color: aqua;
+        }
+        .card-title{
+            background-color: aqua;
+        }
+        .navbar{
+            position: fixed;
+            top: 0px;
+            overflow: hidden;
+            width: 100%;
+            z-index: 9999;
+        }
+        #main{
+            padding-top: 60px;
+        }
+
+    </style>
+    <title>UGAC Canteen</title>
+</head>
+<body style="background-color: rgb(186, 140, 180) ;">
+    <header>
+        
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <img src="../images/ugac_logo.png" alt="UGAC Canteen" style="padding-left: 10px;height: 60px;">         
+            <div class="nav-scroller py-1 mb-2">
+                <nav class="nav d-flex justify-content-end">
+                  <a class="p-2 text-muted" href="#home">Home</a>
+                  <a class="p-2 text-muted" href="#menu">Menu</a>
+                  <a class="p-2 text-muted" href="#history">History</a>
+                  <a class="p-2 text-muted" href="#contact">Contact</a>
+                </nav>
+              </div>
+        </nav>
+
+    </header>
+
+    <main id="main">
+        <section id="home">
+            <div class="jumbotron" style="background-image: url(../images/restaurant_cartoon.jpg);background-size: 100% 100%;">
+                <h1 class="display-3" style="font-weight: bold;background-color: wheat;">Welcome to UGAC canteen</h1>
+                <p class="lead" style="font-weight: bold;">cheap and best</p>
+                <hr class="my-4">
+            </div>
+        </section>
+
+        <section id="menu">
+            <div class="container">
+                <h1 style="text-align: center;text-decoration: underline;">Our Menu</h1>
+                <div class="input-group mb-3" style="width: 60%;margin: auto;">
+                    <input id="searchInput" type="text" class="form-control" placeholder="Search for food items">
+                    <div class="input-group-append">
+                      <button id="searchButton" class="btn btn-primary" type="button">Search</button>
+                    </div>
+                </div>
+                <div class="container" style="width: 60%;margin: auto;">
+                    <ul class="list-group"  id="searchResults">
+                        
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <a href="#taco_menu" aria-expanded="false" aria-controls="taco_menu">
+                            <div class="card">
+                                <img src="../images/taco.jpg" class="img-thumbnail" alt="tacos" style="height: 100%;width: 100%;">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#burger_menu" aria-expanded="false" aria-controls="burger_menu">
+                            <div class="card">
+                                <img src="../images/burger.jpg" class="img-thumbnail" alt="burger" style="height: 100%;width: 100%;">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#pizza_menu" aria-expanded="false" aria-controls="pizza_menu">
+                            <div class="card">
+                                <img src="../images/pizza.jpg" class="img-thumbnail" alt="pizzas" style="height: 100%;width: 100%;">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+        <section id="menu_list" style="padding: 10%;">
+            
+        </section>
+
+        <section id="history" >
+            <div class="container border rounded" style="border: 1px;">
+                <h2 style="text-align: center;">History</h2>
+                <!-- <div class="row">
+                    <div class="col col-lg-4">
+                        <img src="../images/ugac_logo.png" alt="Logo" class="img-fluid">
+                    </div>
+                    <div class="col md-auto">
+                        Established in 1985 by Mr. John Smith, UGAC Canteen has been a beloved restaurant that has stood the test of time. With its humble beginnings near a bustling university campus, UGAC Canteen quickly became a gathering place for students, faculty, and staff. The name "UGAC" represents its original location on University Garden Avenue.
+                    </div>
+                </div> -->
+                <p>
+                    <div>
+                        <img src="../images/ugac_logo.png" alt="Logo" class="img-fluid" style="float: left;padding: 1%;">
+
+                        From the start, UGAC Canteen aimed to create a warm and inviting space where people could enjoy delicious food at affordable prices. It became renowned for its cozy atmosphere and friendly service, fostering a sense of community among its customers. Students, in particular, found solace in the restaurant's comforting ambiance, making it their go-to spot for meals and socializing.
+                    <br> 
+                    Over the years, UGAC Canteen expanded its menu to cater to a diverse range of tastes and preferences. In addition to its traditional comfort foods, the restaurant introduced a variety of international flavors, satisfying even the most discerning palates. Recognizing the importance of accommodating different dietary needs, UGAC Canteen also added vegetarian and vegan options to its offerings, ensuring that everyone could find something enjoyable to eat.
+                    <br>
+                    Beyond its culinary offerings, UGAC Canteen has always been deeply committed to the local community. It has actively participated in events and initiatives that support the neighborhood and foster connections among residents. Whether through sponsoring local sports teams or organizing charity fundraisers, UGAC Canteen has made it a priority to give back and make a positive impact.
+                    <br>
+                    Throughout its history, UGAC Canteen has remained a cherished establishment, loved not only for its delicious food but also for the sense of warmth and camaraderie it brings. As it continues to serve its loyal customers and welcome new faces, UGAC Canteen remains a symbol of hospitality, community, and culinary excellence.
+                    <br>
+                    </div>
+                    
+                    </p>
+                <p></p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form id="form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Enter your message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                    <div class="col-md-6">
+                        <p>IITB, Mumbai, India</p>
+                        <p>Phone: +1 123-456-7890</p>
+                        <p>Follow us:</p>
+                        <a href="#" class="btn btn-primary"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="btn btn-primary"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="btn btn-primary"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script>
+        taco_ids=["taco1","taco2","taco3","taco4"];
+        taco_names=["Taco 1","Taco 2","Taco 3","Taco 4"];
+        taco_rates=[23,545,753,45];
+        taco_images=["../images/taco.jpg","../images/taco.jpg","../images/taco.jpg","../images/taco.jpg"]
+        burger_ids=["burger1","burger2","burger3","burger4"];
+        burger_names=["Burger 1","Burger 2","Burger 3","Burger 4"];
+        burger_rates=[23,545,753,45];
+        burger_images=["../images/burger.jpg","../images/burger.jpg","../images/burger.jpg","../images/burger.jpg"]
+        pizza_ids=["pizza1","pizza2","pizza3","pizza4"];
+        pizza_names=["Pizza 1","Pizza 2","Pizza 3","Pizza 4"];
+        pizza_rates=[23,545,753,45];
+        pizza_images=["../images/pizza.jpg","../images/pizza.jpg","../images/pizza.jpg","../images/pizza.jpg"]
+        foodItems=[...taco_names, ...burger_names, ...pizza_names];
+        foodItems_ids=[...taco_ids,...burger_ids,...pizza_ids];
+        menu_list();
+
+        function menu_list(){
+            a='';
+            a+=
+            `<div id="taco_menu">
+                <div class="card card-body" style="padding: 1%;">
+                    <div class="container">
+                        <h2>Tacos</h2>
+                        <div class="row">`;
+            for(let i=0;i<taco_ids.length;i++){
+                a+=
+        `           <div class="col-md-4" style="padding: 3%;">
+                        <div class="card" id="`+taco_ids[i]+`">
+                            <img class="card card-img-top" src="`+taco_images[i]+`" alt="image">
+                            <h5 class="card card-title">`+taco_names[i]+`</h5>
+                            <a class="card card-body">Rate: `+taco_rates[i]+` Rs</a>
+                        </div>
+                    </div>`;
+            }
+            a+= `
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+
+            a+=
+            `<div id="burger_menu">
+                <div class="card card-body">
+                    <div class="container">
+                        <h2>Burgers</h2>
+                        <div class="row">`;
+            for(let i=0;i<burger_ids.length;i++){
+                a+=
+        `           <div class="col-md-4" style="padding: 3%;">
+                        <div class="card" id="`+burger_ids[i]+`">
+                            <img class="card card-img-top" src="`+burger_images[i]+`" alt="image">
+                            <h5 class="card card-title">`+burger_names[i]+`</h5>
+                            <a class="card card-body">Rate: `+burger_rates[i]+` Rs</a>
+                        </div>
+                    </div>`;
+            }
+            a+= `
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+
+            a+=
+            `<div id="pizza_menu">
+                <div class="card card-body">
+                    <div class="container">
+                        <h2>Pizzas</h2>
+                        <div class="row">`;
+            for(let i=0;i<pizza_ids.length;i++){
+                a+=
+        `           <div class="col-md-4" style="padding: 3%;">
+                        <div class="card" id="`+pizza_ids[i]+`">
+                            <img class="card card-img-top" src="`+pizza_images[i]+`" alt="image">
+                            <h5 class="card card-title">`+pizza_names[i]+`</h5>
+                            <a class="card card-body">Rate: `+pizza_rates[i]+` Rs</a>
+                        </div>
+                    </div>`;
+            }
+            a+= `
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>`;
+
+            document.getElementById("menu_list").innerHTML=a;
+        }
+
+        
+        document.getElementById("form").addEventListener('submit',function(event){submit();})
+        function submit() {
+            event.preventDefault(); 
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            var a="Thank you "+ name+ " (email: "+email+ ") for your message!";
+            alert(a);
+        }
+
+  
+  document.getElementById('searchButton').addEventListener('click', function() {
+    const searchInput = document.getElementById('searchInput').value.toLowerCase();
+    const searchResults = [];
+    const result_ids=[];
+    for (let i = 0; i < foodItems.length; i++) {
+        let currentItem = foodItems[i];
+        if ((currentItem.toLowerCase()).includes(searchInput)) {
+            searchResults.push(currentItem);
+            result_ids.push(foodItems_ids[i]);
+        }
+    }
+
+    displaySearchResults(searchResults,result_ids);
+  });
+
+  // Function to display search results
+  function displaySearchResults(results,result_ids) {
+    const searchResultsDiv = document.getElementById('searchResults');
+    searchResultsDiv.innerHTML = '';
+
+    if (results.length == 0) {
+      searchResultsDiv.innerHTML = '<li class="list-group-item">No results found.</li>';
+    } 
+    else {
+        for(let i=0;i<results.length;i++){
+            let b='<li class="list-group-item"><a href=#'+result_ids[i]+'>'+results[i]+'</a></li>';
+            searchResultsDiv.innerHTML += b;
+        }
+    }
+  }
+
+    </script>
+</body>
+</html>
